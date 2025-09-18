@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+
 
     - name: Install dependencies
       run: npm ci
@@ -36,7 +36,7 @@ jobs:
         npx marge cypress/reports/report.json -f report -o cypress/reports/html
 
     - name: Upload test artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       if: always()
       with:
         name: cypress-results
