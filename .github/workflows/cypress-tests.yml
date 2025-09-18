@@ -28,7 +28,7 @@ jobs:
       run: npm ci
 
     - name: Run Cypress tests
-      run: npm cypress run --spec "cypress/e2e/saucedemo/assert.cy.js" --browser chrome --headless
+      run: npm cypress run --spec "cypress/e2e/saucedemo/assert.cy.js"
 
     - name: Generate HTML report
       run: 
