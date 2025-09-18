@@ -28,7 +28,7 @@ module.exports = defineConfig
     viewportWidth: 1280, // Set video dimensions
     viewportHeight: 720,
 
-    reporter: 'cypress-mochawesome-reportere',
+    reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       reportDir: 'cypress/reports',
       overwrite: false,
