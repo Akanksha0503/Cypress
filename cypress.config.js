@@ -18,21 +18,20 @@ module.exports = defineConfig
         inlineAssets: true,
         saveAllAttempts: false,
       },
+      setupNodeEvents(on, config) {
+        // implement node event listeners here
+        require('cypress-mochawesome-reporter/plugin')(on);
+        on('task', {
+          log(message) {
+            console.log(message);
+            return null;
+          },
 
-
+        });
+      },
       // implement node event listeners here
     },
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      require('cypress-mochawesome-reporter/plugin')(on);
-      on('task', {
-        log(message) {
-          console.log(message);
-          return null;
-        },
 
-      });
-    },
     screenshotOnRunFailure: true, // Auto-screenshot on test failure
     screenshotsFolder: 'cypress/screenshots', // Screenshots save location
 
