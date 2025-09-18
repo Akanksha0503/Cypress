@@ -15,10 +15,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -28,7 +28,7 @@ jobs:
       run: npm ci
 
     - name: Run Cypress tests
-      run: npm cypress run --spec "cypress/e2e/saucedemo/assert.cy.js"
+      run: npx cypress run --spec "cypress/e2e/saucedemo/assert.cy.js"
 
     - name: Generate HTML report
       run: 
