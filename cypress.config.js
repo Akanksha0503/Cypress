@@ -6,7 +6,7 @@ module.exports = defineConfig({
     experimentalStudio: true,
     defaultCommandTimeout: 100000,
 
-    reporter: 'cypress-mochawesome-reporter', // ✅ Correct reporter
+    reporter: 'mochawesome', // ✅ Correct reporter
     reporterOptions: {
       reportDir: 'cypress/reports',
       overwrite: false,
@@ -21,7 +21,7 @@ module.exports = defineConfig({
 
     setupNodeEvents(on, config) {
       // Register the mochawesome plugin
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // require('cypress-mochawesome-reporter/plugin')(on);
 
       // Optional: log messages from test
       on('task', {
